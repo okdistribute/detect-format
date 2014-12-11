@@ -1,14 +1,21 @@
+var detectJsonStyle = require('detect-json-style')
 /**
  * You should probably give me a few rows to improve accuracy.
  * C'mon, it won't hurt you any.
  */
 
 module.exports = function (data) {
+  var json = detectJsonStyle(data)
+  if (json && json.selector)  {
+    return {
+      format: 'json',
+      selector: json.selector
+    }
+  }
+
   if (typeof data != 'string') {
     data = data.toString();
   }
-
-  if (isJSON(data)) return { format: 'json' }
 
   var delimiters = [',', '\t', '|'];
 
@@ -26,15 +33,6 @@ module.exports = function (data) {
   return {
     format: false,
     separator: false
-  }
-}
-
-function isJSON(data) {
-  try {
-    JSON.parse(data)
-    return true
-  } catch (err) {
-    return false
   }
 }
 

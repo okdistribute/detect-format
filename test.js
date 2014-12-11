@@ -13,6 +13,7 @@ test('multiple lines of json data', function (t) {
   var data = '[{"a": 1, "b": 2, "c": 3}, {"a": 4, "b": 5, "c": 6}]'
   var result = detectFormat(data)
   t.equals(result.format, 'json')
+  t.equals(result.selector, '*')
   t.end()
 })
 
