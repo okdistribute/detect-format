@@ -16,6 +16,7 @@
   "author": "Karissa McKelvey <karissa@karissamck.com> (http://karissamck.com/)",
   "license": "ISC",
   "dependencies": {
+    "detect-json-style": "^1.0.2",
     "tape": "^3.0.3"
   }
 }
