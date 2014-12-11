@@ -50,11 +50,13 @@ function tryDelimiter(data, delimiter) {
 
   for (var i in rows) {
     var theRow = rows[i]
+    // if we dont see the delimiter here at all, why bother?
     if (theRow.indexOf(delimiter) < 0) return false
 
     var row = splitDelimiter(theRow, delimiter);
 
     if (i == 0) {
+      // first row sets our standard for how many rows to expect.
       numColumns = row.length;
     }
     else {
@@ -67,5 +69,6 @@ function tryDelimiter(data, delimiter) {
 }
 
 function splitDelimiter(row, delimiter) {
+  // TODO: take into account quoted cells.
   return row.split(delimiter);
 }
