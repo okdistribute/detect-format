@@ -45,7 +45,7 @@ function tryDelimiter(data, delimiter) {
   if (rows.length == 1) {
     // you arent giving me that much info but I'll try, I guess.
     var row = splitDelimiter(rows[0], delimiter);
-    return row.length > 0;
+    return row.length > 1;
   }
 
   for (var i in rows) {
