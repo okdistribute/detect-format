@@ -8,6 +8,14 @@ test('simple csv data', function (t) {
   t.end()
 })
 
+
+test('multiple lines of json data', function (t) {
+  var data = '[{"a": 1, "b": 2, "c": 3}, {"a": 4, "b": 5, "c": 6}]'
+  var result = detectFormat(data)
+  t.equals(result.format, 'json')
+  t.end()
+})
+
 test('multiple lines of csv data', function (t) {
   var data = 'a,b,c\n1,2,3\n4,5,6\n7,8,9'
   var result = detectFormat(data)
@@ -29,8 +37,6 @@ test('simple | data', function (t) {
   t.equals(result.separator, '|')
   t.end()
 })
-
-
 
 
 test('malformed | data', function (t) {

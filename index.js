@@ -7,23 +7,36 @@ module.exports = function (data) {
   if (typeof data != 'string') {
     data = data.toString();
   }
-  var formats = [',', '\t', '|'];
 
-  for (var i in formats) {
-    var format = formats[i];
+  if (isJSON(data)) return { format: 'json' }
+
+  var delimiters = [',', '\t', '|'];
+
+  for (var i in delimiters) {
+    var format = delimiters[i];
 
     var result = tryDelimiter(data, format);
     if (result) {
       return {
+        format: 'csv',
         separator: format
       }
     }
   }
   return {
+    format: false,
     separator: false
   }
 }
 
+function isJSON(data) {
+  try {
+    JSON.parse(data)
+    return true
+  } catch (err) {
+    return false
+  }
+}
 
 function tryDelimiter(data, delimiter) {
   var rows = data.split('\n');
