@@ -57,10 +57,9 @@ test('simple | data', function (t) {
   t.end()
 })
 
-
-test('malformed | data', function (t) {
-  var data = 'a|b|c\n1|2|3\n1|2'
+test('malformed data', function (t) {
+  var data = 'abcdef'
   var result = detectFormat(data)
-  t.equals(result.separator, false)
+  t.equals(result, false)
   t.end()
 })
