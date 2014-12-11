@@ -1,0 +1,21 @@
+{
+  "name": "detect-format",
+  "version": "1.0.0",
+  "description": "detects the format of some buffer or string",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "data",
+    "datasets",
+    "format",
+    "csv",
+    "tsv"
+  ],
+  "author": "Karissa McKelvey <karissa@karissamck.com> (http://karissamck.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "tape": "^3.0.3"
+  }
+}
