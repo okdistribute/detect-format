@@ -1,6 +1,6 @@
 detect-format
 =============
-
+[![NPM](https://nodei.co/npm/detect-format.png)](https://nodei.co/npm/detect-format/)
 [![build status](https://secure.travis-ci.org/karissa/detect-format.png)](http://travis-ci.org/karissa/detect-format)
 
 Detects the format of a given buffer or string. It works a lot better if you give it a few lines.
